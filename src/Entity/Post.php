@@ -16,6 +16,8 @@ class Post
     private string $contenu;
     #[ORM\Column(name: 'date_creation_post',type: 'datetime',nullable: false)]
     private \DateTime $createdAt;
+    #[ORM\Column(name: 'nb_likes_post',type: 'integer')]
+    private int $nbLikes;
 
     public function getId(): int
     {
@@ -55,6 +57,16 @@ class Post
     public function setCreatedAt(\DateTime $createdAt): void
     {
         $this->createdAt = $createdAt;
+    }
+
+    public function getNbLikes(): int
+    {
+        return $this->nbLikes;
+    }
+
+    public function setNbLikes(int $nbLikes): void
+    {
+        $this->nbLikes = $nbLikes;
     }
 
 
